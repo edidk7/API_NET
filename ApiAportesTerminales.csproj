@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABE01B39-8394-46D8-9060-8E90E49A06B7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApiAportesTerminales</RootNamespace>
+    <AssemblyName>ApiAportesTerminales</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44329</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\jose-jwt.4.1.0\lib\net472\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Abstractions.6.20.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.6.20.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.6.20.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.6.20.0\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.20.0\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.6.20.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=9.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAzure.Storage.9.3.3\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Spire.Pdf, Version=8.7.2.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>packages\FreeSpire.XLS.12.7.0\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=12.7.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>packages\FreeSpire.XLS.12.7.0\lib\net40\Spire.XLS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.6.20.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Cors.5.2.9\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Cors.5.2.9\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Code\FileUploadService.cs" />
+    <Compile Include="Code\Seguridad\TokenRSAGenerator.cs" />
+    <Compile Include="Controllers\AporteController.cs" />
+    <Compile Include="Controllers\CrucePxQController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\BaseRecepcionesController.cs" />
+    <Compile Include="Controllers\AcuerdoCompraController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MarcaController.cs" />
+    <Compile Include="Controllers\NotaCreditoController.cs" />
+    <Compile Include="Controllers\Seguridad\Atributos\Login.cs" />
+    <Compile Include="Controllers\Seguridad\TokenValidationHandler.cs" />
+    <Compile Include="Controllers\SustentosController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AcuerdoCompraDAO.cs" />
+    <Compile Include="Models\AportesDAO.cs" />
+    <Compile Include="Models\AportesTerminales.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AportesTerminales.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AportesTerminales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AportesTerminales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AportesTerminales.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AportesTerminales1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AportesTerminales.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseRecepcionesDAO.cs" />
+    <Compile Include="Models\LoginDAO.cs" />
+    <Compile Include="Models\NotaCreditoDAO.cs" />
+    <Compile Include="Models\CrucePxqDAO.cs" />
+    <Compile Include="Models\sp_baserecepcion_rel_acuerdocompra_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_crucepxqcabecera_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_deleteAcuerdoCompraCabecera_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_deleteBaseRecepcionCabecera_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_deleteCruceLineaDuplicada_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_deleteNotaCredito_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_deleteRegistrosPendientes_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_deudasCruce_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getActasOtraMarca_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getActasSamsung_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getAcuerdoCompraCabecera_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getBaseRecepcionesCabecera_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getCruceLineasRepetidas_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getCrucePxQDetalleTipoAporte_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getDebtsPaid_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getDeudaValidada_Marca_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getFacturaSustento_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getFactura_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getLineaDeuda_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getLineaNotaCreditoContabilidad_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getLineasNotaCreditoCompras_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getLineasNotaCreditoHistorial_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getLineasNotaCredito_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getMarcas_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getNotaCreditoByCruce_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getNotaCredito_Marca_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getNotaCredito_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getSustentoDeudasPxQ_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getSustentoOmByActas_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getSustentoOm_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getSustento_sel_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postAcuerdoCompra_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postBaseRecepcion_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postCruceMarca_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postCrucePxQDetalle_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postDeudaPagadaAcreditada_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postDeudaValidada_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_PostNotaCreditoAceptada_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postNotaCreditoContabilidad_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postNotaCreditoNotificacion_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postNotaCreditoPagada_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postNotaCreditoRechazada_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postNotaCredito_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postSustentoAprobado_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postSustentoFacturacion_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postSustentoFinalizarCampana_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_postSustentoRechazado_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_PostSustento_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_validarLogin_Result.cs">
+      <DependentUpon>AportesTerminales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SustentoDAO.cs" />
+    <Compile Include="Models\Utils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\AportesTerminales.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AportesTerminales.edmx</DependentUpon>
+      <LastGenOutput>AportesTerminales.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AportesTerminales.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AportesTerminales.edmx</DependentUpon>
+      <LastGenOutput>AportesTerminales.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\AportesTerminales.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AportesTerminales1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AportesTerminales.edmx.diagram">
+      <DependentUpon>AportesTerminales.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\privateKey.pem" />
+    <Content Include="Content\publicKey.pem" />
+    <None Include="Properties\PublishProfiles\ApiAportesTerminales - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\AcuerdoCompraDetalles\" />
+    <Folder Include="Views\Aportes\" />
+    <Folder Include="Views\getBaseRecepciones\" />
+    <Folder Include="Views\getCrucePxQ\" />
+    <Folder Include="Views\Marcas\" />
+    <Folder Include="Views\NotaCredito\" />
+    <Folder Include="Views\Sustentos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63999</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44329/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

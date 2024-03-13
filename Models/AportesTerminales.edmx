@@ -1,0 +1,1718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AportesTerminalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_baserecepcion_rel_acuerdocompra_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_crucepxqcabecera_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_deleteAcuerdoCompraCabecera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_deleteBaseRecepcionCabecera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_deleteCruceLineaDuplicada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_deleteNotaCredito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ids" Type="varchar(max)" Mode="In" />
+          <Parameter Name="idsNc" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_deleteRegistrosPendientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPxQDetallePendiente" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_deudasCruce_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getActasSamsung_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="esSamsung" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_getAcuerdoCompraCabecera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getBaseRecepcionesCabecera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getCruceLineasRepetidas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getDebtsPaid_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idDetalle" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getDeudaValidada_Marca_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getFactura_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="esSamsung" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_getFacturaSustento_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idSus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getLineaNotaCreditoContabilidad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idLineaNc" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getLineasNotaCredito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idLineaNc" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getLineasNotaCreditoCompras_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idDetalle" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getLineasNotaCreditoHistorial_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getMarcas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getNotaCredito_Marca_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getNotaCredito_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idNc" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getNotaCreditoByCruce_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idDetalle" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getPermisosUsuarios_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="correo" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_getSustento_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="esSamsung" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_getSustentoDeudasPxQ" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idSustento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getSustentoOm_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getSustentoOmByActas_sel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCabMar" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_postAcuerdoCompra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+          <Parameter Name="nombreArchivo" Type="varchar" Mode="In" />
+          <Parameter Name="fechaCarga" Type="varchar" Mode="In" />
+          <Parameter Name="rutaArchivo" Type="varchar(max)" Mode="In" />
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+          <Parameter Name="xml" Type="xml" Mode="In" />
+        </Function>
+        <Function Name="sp_postBaseRecepcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+          <Parameter Name="nombreArchivo" Type="varchar" Mode="In" />
+          <Parameter Name="fechaCarga" Type="varchar" Mode="In" />
+          <Parameter Name="rutaArchivo" Type="varchar(max)" Mode="In" />
+          <Parameter Name="periodo" Type="varchar" Mode="In" />
+          <Parameter Name="xml" Type="xml" Mode="In" />
+        </Function>
+        <Function Name="sp_postCruceMarca" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPxQDetalleEntregado" Type="varchar(max)" Mode="In" />
+          <Parameter Name="idPxQDetallePendiente" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_postCrucePxQDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="NcVir" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoVir" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoAcreditadoVir" Type="varchar" Mode="In" />
+          <Parameter Name="NcFc" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoFc" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoAcreditadoFc" Type="varchar" Mode="In" />
+          <Parameter Name="NcIncoterm" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoIncoterm" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoAcreditadoIncoterm" Type="varchar" Mode="In" />
+          <Parameter Name="FactFc" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoFactFc" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoAcreditadoFactFc" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_postDeudaPagadaAcreditada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idDeudasPxQ" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_postDeudaValidada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+          <Parameter Name="ids" Type="varchar(max)" Mode="In" />
+          <Parameter Name="deudaSamsung" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_postNotaCredito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+          <Parameter Name="nc" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="idsDetalleCruce" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_PostNotaCreditoAceptada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idNc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="aceptarParcialmente" Type="varchar" Mode="In" />
+          <Parameter Name="observaciones" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_postNotaCreditoContabilidad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idNcConta" Type="varchar(max)" Mode="In" />
+          <Parameter Name="urlCc" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_postNotaCreditoNotificacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idNcNotificacion" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_postNotaCreditoPagada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ids" Type="varchar(max)" Mode="In" />
+          <Parameter Name="idsNc" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_postNotaCreditoRechazada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCruce" Type="varchar(max)" Mode="In" />
+          <Parameter Name="idNc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="observacionesRechazo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_PostSustento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+          <Parameter Name="sus" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="idsCruceCabMarca" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_postSustentoAprobado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+          <Parameter Name="idSus" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_postSustentoFacturacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+          <Parameter Name="idPxQDetalle" Type="varchar(max)" Mode="In" />
+          <Parameter Name="fac" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="idSus" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_postSustentoFinalizarCampana" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idSus" Type="varchar(max)" Mode="In" />
+          <Parameter Name="idsCruceCabMarca" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_postSustentoRechazado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ownerEmail" Type="varchar" Mode="In" />
+          <Parameter Name="idSus" Type="varchar(max)" Mode="In" />
+          <Parameter Name="observaciones" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_token" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="token" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_validarLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="AportesTerminalesModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AportesTerminalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AportesTerminalesEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_deleteAcuerdoCompraCabecera" ReturnType="Collection(AportesTerminalesModel.sp_deleteAcuerdoCompraCabecera_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getBaseRecepcionesCabecera" ReturnType="Collection(AportesTerminalesModel.sp_getBaseRecepcionesCabecera_Result)" />
+          <FunctionImport Name="sp_crucepxqcabecera_sel" ReturnType="Collection(AportesTerminalesModel.sp_crucepxqcabecera_sel_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postCruceMarca" ReturnType="Collection(AportesTerminalesModel.sp_postCruceMarca_Result)">
+            <Parameter Name="idPxQDetalleEntregado" Mode="In" Type="String" />
+            <Parameter Name="idPxQDetallePendiente" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_deleteCruceLineaDuplicada" ReturnType="Collection(AportesTerminalesModel.sp_deleteCruceLineaDuplicada_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getCruceLineasRepetidas" ReturnType="Collection(AportesTerminalesModel.sp_getCruceLineasRepetidas_Result)" />
+          <FunctionImport Name="sp_postBaseRecepcion" ReturnType="Collection(AportesTerminalesModel.sp_postBaseRecepcion_Result)">
+            <Parameter Name="ownerEmail" Mode="In" Type="String" />
+            <Parameter Name="nombreArchivo" Mode="In" Type="String" />
+            <Parameter Name="fechaCarga" Mode="In" Type="String" />
+            <Parameter Name="rutaArchivo" Mode="In" Type="String" />
+            <Parameter Name="periodo" Mode="In" Type="String" />
+            <Parameter Name="xml" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getAcuerdoCompraCabecera" ReturnType="Collection(AportesTerminalesModel.sp_getAcuerdoCompraCabecera_Result)" />
+          <FunctionImport Name="sp_postAcuerdoCompra" ReturnType="Collection(AportesTerminalesModel.sp_postAcuerdoCompra_Result)">
+            <Parameter Name="ownerEmail" Mode="In" Type="String" />
+            <Parameter Name="nombreArchivo" Mode="In" Type="String" />
+            <Parameter Name="fechaCarga" Mode="In" Type="String" />
+            <Parameter Name="rutaArchivo" Mode="In" Type="String" />
+            <Parameter Name="periodo" Mode="In" Type="String" />
+            <Parameter Name="xml" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postCrucePxQDetalle" ReturnType="Collection(AportesTerminalesModel.sp_postCrucePxQDetalle_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="NcVir" Mode="In" Type="String" />
+            <Parameter Name="EstadoVir" Mode="In" Type="String" />
+            <Parameter Name="EstadoAcreditadoVir" Mode="In" Type="String" />
+            <Parameter Name="NcFc" Mode="In" Type="String" />
+            <Parameter Name="EstadoFc" Mode="In" Type="String" />
+            <Parameter Name="EstadoAcreditadoFc" Mode="In" Type="String" />
+            <Parameter Name="NcIncoterm" Mode="In" Type="String" />
+            <Parameter Name="EstadoIncoterm" Mode="In" Type="String" />
+            <Parameter Name="EstadoAcreditadoIncoterm" Mode="In" Type="String" />
+            <Parameter Name="FactFc" Mode="In" Type="String" />
+            <Parameter Name="EstadoFactFc" Mode="In" Type="String" />
+            <Parameter Name="EstadoAcreditadoFactFc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getCrucePxQDetalleTipoAporte_sel" ReturnType="Collection(AportesTerminalesModel.sp_getCrucePxQDetalleTipoAporte_sel_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_deleteBaseRecepcionCabecera" ReturnType="Collection(AportesTerminalesModel.sp_deleteBaseRecepcionCabecera_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_baserecepcion_rel_acuerdocompra_sel" ReturnType="Collection(AportesTerminalesModel.sp_baserecepcion_rel_acuerdocompra_sel_Result)">
+          <Parameter Name="ownerEmail" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getLineaDeuda_sel" ReturnType="Collection(AportesTerminalesModel.sp_getLineaDeuda_sel_Result)" />
+          <FunctionImport Name="sp_postNotaCredito" ReturnType="Collection(AportesTerminalesModel.sp_postNotaCredito_Result)">
+            <Parameter Name="ownerEmail" Mode="In" Type="String" />
+            <Parameter Name="nc" Mode="In" Type="String" />
+            <Parameter Name="idsDetalleCruce" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getNotaCredito_sel" ReturnType="Collection(AportesTerminalesModel.sp_getNotaCredito_sel_Result)" >
+          <Parameter Name="idNc" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postNotaCreditoPagada" ReturnType="Collection(AportesTerminalesModel.sp_postNotaCreditoPagada_Result)">
+            <Parameter Name="ids" Mode="In" Type="String" />
+            <Parameter Name="idsNc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getNotaCreditoByCruce_sel" ReturnType="Collection(AportesTerminalesModel.sp_getNotaCreditoByCruce_sel_Result)">
+          <Parameter Name="idDetalle" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_PostNotaCreditoAceptada" ReturnType="Collection(AportesTerminalesModel.sp_PostNotaCreditoAceptada_Result)">
+            <Parameter Name="idNc" Mode="In" Type="String" />
+            <Parameter Name="aceptarParcialmente" Mode="In" Type="String" />
+            <Parameter Name="observaciones" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postNotaCreditoContabilidad" ReturnType="Collection(AportesTerminalesModel.sp_postNotaCreditoContabilidad_Result)">
+            <Parameter Name="idNcConta" Mode="In" Type="String" />
+            <Parameter Name="urlCc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_deleteRegistrosPendientes" ReturnType="Collection(AportesTerminalesModel.sp_deleteRegistrosPendientes_Result)">
+          <Parameter Name="idPxQDetallePendiente" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getLineasNotaCredito" ReturnType="Collection(AportesTerminalesModel.sp_getLineasNotaCredito_Result)">
+          <Parameter Name="idLineaNc" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postNotaCreditoNotificacion" ReturnType="Collection(AportesTerminalesModel.sp_postNotaCreditoNotificacion_Result)">
+          <Parameter Name="idNcNotificacion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postNotaCreditoRechazada" ReturnType="Collection(AportesTerminalesModel.sp_postNotaCreditoRechazada_Result)">
+            <Parameter Name="idCruce" Mode="In" Type="String" />
+            <Parameter Name="idNc" Mode="In" Type="String" />
+            <Parameter Name="observacionesRechazo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getLineaNotaCreditoContabilidad" ReturnType="Collection(AportesTerminalesModel.sp_getLineaNotaCreditoContabilidad_Result)">
+          <Parameter Name="idLineaNc" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getLineasNotaCreditoCompras_sel" ReturnType="Collection(AportesTerminalesModel.sp_getLineasNotaCreditoCompras_sel_Result)">
+          <Parameter Name="idDetalle" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getLineasNotaCreditoHistorial_sel" ReturnType="Collection(AportesTerminalesModel.sp_getLineasNotaCreditoHistorial_sel_Result)" >
+          <Parameter Name="ownerEmail" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_PostSustento" ReturnType="Collection(AportesTerminalesModel.sp_PostSustento_Result)">
+            <Parameter Name="ownerEmail" Mode="In" Type="String" />
+            <Parameter Name="sus" Mode="In" Type="String" />
+            <Parameter Name="idsCruceCabMarca" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getActasSamsung_sel" ReturnType="Collection(AportesTerminalesModel.sp_getActasSamsung_sel_Result)" >
+          <Parameter Name="esSamsung" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getSustento_sel" ReturnType="Collection(AportesTerminalesModel.sp_getSustento_sel_Result)" >
+          <Parameter Name="esSamsung" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postSustentoAprobado" ReturnType="Collection(AportesTerminalesModel.sp_postSustentoAprobado_Result)">
+            <Parameter Name="ownerEmail" Mode="In" Type="String" />
+            <Parameter Name="idSus" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postSustentoRechazado" ReturnType="Collection(AportesTerminalesModel.sp_postSustentoRechazado_Result)">
+            <Parameter Name="ownerEmail" Mode="In" Type="String" />
+            <Parameter Name="idSus" Mode="In" Type="String" />
+            <Parameter Name="observaciones" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postSustentoFacturacion" ReturnType="Collection(AportesTerminalesModel.sp_postSustentoFacturacion_Result)">
+            <Parameter Name="ownerEmail" Mode="In" Type="String" />
+            <Parameter Name="idPxQDetalle" Mode="In" Type="String" />
+            <Parameter Name="fac" Mode="In" Type="String" />
+            <Parameter Name="idSus" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getActasOtraMarca_sel" ReturnType="Collection(AportesTerminalesModel.sp_getActasOtraMarca_sel_Result)" >
+          <Parameter Name="idLinea" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postSustentoFinalizarCampana" ReturnType="Collection(AportesTerminalesModel.sp_postSustentoFinalizarCampana_Result)">
+            <Parameter Name="idSus" Mode="In" Type="String" />
+            <Parameter Name="idsCruceCabMarca" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getSustentoOm_sel" ReturnType="Collection(AportesTerminalesModel.sp_getSustentoOm_sel_Result)" />
+          <FunctionImport Name="sp_getSustentoOmByActas_sel" ReturnType="Collection(AportesTerminalesModel.sp_getSustentoOmByActas_sel_Result)">
+          <Parameter Name="idCabMar" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getPermisosUsuarios_sel" ReturnType="Collection(Int32)">
+          <Parameter Name="correo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getMarcas" ReturnType="Collection(AportesTerminalesModel.sp_getMarcas_Result)" />
+          <FunctionImport Name="sp_getFactura_sel" ReturnType="Collection(AportesTerminalesModel.sp_getFactura_sel_Result)" >
+          <Parameter Name="esSamsung" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getDebtsPaid_sel" ReturnType="Collection(AportesTerminalesModel.sp_getDebtsPaid_sel_Result)" >
+          <Parameter Name="idDetalle" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getSustentoDeudasPxQ" ReturnType="Collection(AportesTerminalesModel.sp_getSustentoDeudasPxQ_Result)">
+          <Parameter Name="idSustento" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postDeudaPagadaAcreditada" ReturnType="Collection(AportesTerminalesModel.sp_postDeudaPagadaAcreditada_Result)">
+          <Parameter Name="idDeudasPxQ" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_token">
+          <Parameter Name="token" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getFacturaSustento_sel" ReturnType="Collection(AportesTerminalesModel.sp_getFacturaSustento_sel_Result)">
+          <Parameter Name="idSus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getNotaCredito_Marca_sel" ReturnType="Collection(AportesTerminalesModel.sp_getNotaCredito_Marca_sel_Result)">
+          <Parameter Name="ownerEmail" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_validarLogin" ReturnType="Collection(AportesTerminalesModel.sp_validarLogin_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_deudasCruce_sel" ReturnType="Collection(AportesTerminalesModel.sp_deudasCruce_sel_Result)">
+          <Parameter Name="ownerEmail" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_deleteNotaCredito" ReturnType="Collection(AportesTerminalesModel.sp_deleteNotaCredito_Result)">
+            <Parameter Name="ids" Mode="In" Type="String" />
+            <Parameter Name="idsNc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_postDeudaValidada" ReturnType="Collection(AportesTerminalesModel.sp_postDeudaValidada_Result)">
+            <Parameter Name="ownerEmail" Mode="In" Type="String" />
+            <Parameter Name="ids" Mode="In" Type="String" />
+            <Parameter Name="deudaSamsung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getDeudaValidada_Marca_sel" ReturnType="Collection(AportesTerminalesModel.sp_getDeudaValidada_Marca_sel_Result)">
+          <Parameter Name="ownerEmail" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_deleteAcuerdoCompraCabecera_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getBaseRecepcionesCabecera_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="fechaCarga" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="nombreArchivo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="rutaArchivo" Nullable="false" />
+          <Property Type="String" Name="periodo" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_crucepxqcabecera_sel_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="compraId" Nullable="false" />
+          <Property Type="String" Name="compraNombreArchivo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="compraFechaCarga" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="compraRutaArchivo" Nullable="false" />
+          <Property Type="String" Name="compraPeriodo" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="baseId" Nullable="false" />
+          <Property Type="String" Name="baseNombreArchivo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="baseFechaCarga" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="baseRutaArchivo" Nullable="false" />
+          <Property Type="String" Name="basePeriodo" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_postCruceMarca_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_deleteCruceLineaDuplicada_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getCruceLineasRepetidas_Result">
+          </ComplexType>
+        <ComplexType Name="sp_postBaseRecepcion_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getAcuerdoCompraCabecera_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="fechaCarga" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="nombreArchivo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="rutaArchivo" Nullable="false" />
+          <Property Type="String" Name="periodo" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_postAcuerdoCompra_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_postCrucePxQDetalle_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getCrucePxQDetalleTipoAporte_sel_Result">
+          <Property Type="Int16" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="IdCrucePxQDetalle" Nullable="false" />
+          <Property Type="String" Name="TipoAporte" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NC" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditado" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_deleteBaseRecepcionCabecera_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_baserecepcion_rel_acuerdocompra_sel_Result">
+          <Property Type="String" Name="NombreEquipo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QCodigo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Comprador" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Categoria" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Anio" Nullable="false" />
+          <Property Type="Int32" Name="Q" Nullable="false" />
+          <Property Type="String" Name="Moneda" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EstadoEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FechaRecepcion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="AnioEntrega" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MesEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorTotal" Nullable="false" />
+          <Property Type="Int32" Name="VirUnitario" Nullable="false" />
+          <Property Type="Decimal" Name="VirTotal" Nullable="false" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="Fc" Nullable="false" Precision="5" Scale="4" />
+          <Property Type="Decimal" Name="FcUnitario" Nullable="false" Precision="5" Scale="3" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="TipoIncoterm" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Incoterm" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="IncotermTotal" Nullable="true" Precision="8" Scale="3" />
+          <Property Type="Int32" Name="UsdTotal" Nullable="false" />
+          <Property Type="Decimal" Name="ValorNetoUnitario" Nullable="true" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorNetoTotal" Nullable="false" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="String" Name="NcVir" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="NcFc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="NcIncoterm" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="IdNotaCreditoCabecera" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="IdCrucePxQCabecera" Nullable="false" />
+          <Property Type="Int16" Name="idMarca" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getLineaDeuda_sel_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="NombreEquipo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QCodigo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Comprador" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Categoria" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Anio" Nullable="false" />
+          <Property Type="Int32" Name="Q" Nullable="false" />
+          <Property Type="String" Name="Moneda" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EstadoEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FechaRecepcion" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="AnioEntrega" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MesEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorTotal" Nullable="false" />
+          <Property Type="Int32" Name="VirUnitario" Nullable="false" />
+          <Property Type="Int32" Name="VirTotal" Nullable="false" />
+          <Property Type="Decimal" Name="Fc" Nullable="false" Precision="5" Scale="4" />
+          <Property Type="Decimal" Name="FcUnitario" Nullable="false" Precision="5" Scale="3" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="false" Precision="8" Scale="3" />
+          <Property Type="String" Name="TipoIncoterm" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Incoterm" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="Int32" Name="IncotermTotal" Nullable="false" />
+          <Property Type="Int32" Name="UsdTotal" Nullable="false" />
+          <Property Type="Int32" Name="ValorNetoUnitario" Nullable="false" />
+          <Property Type="Int32" Name="ValorNetoTotal" Nullable="false" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="Int32" Name="idCrucePxQDetalle" Nullable="false" />
+          <Property Type="String" Name="TipoAporte" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NC" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditado" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_postNotaCredito_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getNotaCredito_sel_Result">
+          <Property Type="String" Name="NumeroNc" Nullable="true" MaxLength="30" />
+          <Property Type="Decimal" Name="MontoNc" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="PdfNc" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdNotaCreditoCabecera" Nullable="false" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="true" />
+          <Property Type="Decimal" Name="Total" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="FechaCreacion" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Marca" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Vir" Nullable="false" />
+          <Property Type="Int32" Name="Fc" Nullable="false" />
+          <Property Type="Int32" Name="Incoterm" Nullable="false" />
+          <Property Type="Int16" Name="idMarca" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_postNotaCreditoPagada_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getNotaCreditoByCruce_sel_Result">
+          <Property Type="Int32" Name="IdNotaCreditoCabecera" Nullable="false" />
+          <Property Type="String" Name="NumeroNc" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="idCrucePxQDetalle" Nullable="false" />
+          <Property Type="Boolean" Name="Vir" Nullable="false" />
+          <Property Type="Boolean" Name="Fc" Nullable="false" />
+          <Property Type="Boolean" Name="Incoterm" Nullable="false" />
+          <Property Type="Decimal" Name="MontoNc" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="PdfNc" Nullable="true" MaxLength="100" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="true" />
+          <Property Type="String" Name="Observaciones" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="XmlNc" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_PostNotaCreditoAceptada_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_postNotaCreditoContabilidad_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_deleteRegistrosPendientes_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getLineasNotaCredito_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MesEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EstadoEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FechaRecepcion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="String" Name="IdNotaCreditoCabecera" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Vir" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Fc" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Incoterm" Nullable="true" MaxLength="4000" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_postNotaCreditoNotificacion_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_postNotaCreditoRechazada_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getLineaNotaCreditoContabilidad_Result">
+          <Property Type="Int32" Name="VirUnitario" Nullable="false" />
+          <Property Type="Decimal" Name="VirTotal" Nullable="true" Precision="38" Scale="3" />
+          <Property Type="Decimal" Name="IncotermTotal" Nullable="true" Precision="38" Scale="3" />
+          <Property Type="Boolean" Name="Fc" Nullable="false" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="38" Scale="3" />
+          <Property Type="String" Name="NumeroNc" Nullable="true" MaxLength="30" />
+          <Property Type="Decimal" Name="FcUnitario" Nullable="false" Precision="5" Scale="4" />
+          <Property Type="String" Name="FcCuentaContable" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Vir" Nullable="false" />
+          <Property Type="String" Name="VirCuentaContable" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Incoterm" Nullable="false" />
+          <Property Type="Decimal" Name="IncotermUnitario" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="IncotermCuentaContable" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Distribucion" Nullable="true" MaxLength="20" />
+          <Property Type="Decimal" Name="Porcentaje" Nullable="true" Precision="6" Scale="5" />
+          <Property Type="Decimal" Name="FcDistribuido" Nullable="true" Precision="38" Scale="6" />
+          <Property Type="String" Name="NombreEquipo" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Int32" Name="IdNotaCreditoCrucePxQDetalle" Nullable="false" />
+          <Property Type="Int32" Name="Anio" Nullable="false" />
+          <Property Type="Int32" Name="Q" Nullable="false" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          </ComplexType>
+        <ComplexType Name="sp_getLineasNotaCreditoCompras_sel_Result">
+          <Property Type="String" Name="NombreEquipo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QCodigo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Comprador" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Categoria" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Anio" Nullable="false" />
+          <Property Type="Int32" Name="Q" Nullable="false" />
+          <Property Type="String" Name="Moneda" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EstadoEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FechaRecepcion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="AnioEntrega" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MesEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorTotal" Nullable="false" />
+          <Property Type="Int32" Name="VirUnitario" Nullable="false" />
+          <Property Type="Decimal" Name="VirTotal" Nullable="false" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="Fc" Nullable="false" Precision="5" Scale="4" />
+          <Property Type="Decimal" Name="FcUnitario" Nullable="false" Precision="5" Scale="3" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="TipoIncoterm" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Incoterm" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="IncotermTotal" Nullable="true" Precision="8" Scale="3" />
+          <Property Type="Int32" Name="UsdTotal" Nullable="false" />
+          <Property Type="Decimal" Name="ValorNetoUnitario" Nullable="true" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorNetoTotal" Nullable="false" />
+          <Property Type="String" Name="NcVir" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="NcFc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="NcIncoterm" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="FactFc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoFactFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFactFc" Nullable="true" MaxLength="20" />
+          </ComplexType>
+        <ComplexType Name="sp_getLineasNotaCreditoHistorial_sel_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MesEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FechaRecepcion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="String" Name="NcVir" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="VirUnitario" Nullable="false" />
+          <Property Type="Decimal" Name="VirTotal" Nullable="false" Precision="10" Scale="3" />
+          <Property Type="String" Name="NcFc" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="FcUnitario" Nullable="false" Precision="5" Scale="3" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="NcIncoterm" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="Incoterm" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="IncotermTotal" Nullable="true" Precision="8" Scale="3" />
+          <Property Type="String" Name="EstadoAcreditadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="String" Name="FactFc" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_PostSustento_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getActasSamsung_sel_Result">
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="38" Scale="3" />
+          <Property Type="Int32" Name="IdCrucePxQCabecera" Nullable="false" />
+          <Property Type="String" Name="periodo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MesEntrega" Nullable="true" MaxLength="30" />
+          <Property Type="Int16" Name="MarcaId" Nullable="false" />
+          <Property Type="Int32" Name="IdCrucePxQCabeceraMarca" Nullable="false" />
+          <Property Type="Int32" Name="IdEstadoEtapa" Nullable="true" />
+          </ComplexType>
+        <ComplexType Name="sp_getSustento_sel_Result">
+          <Property Type="String" Name="FechaCreacion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="TotalSus" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="String" Name="PdfSustento" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="LinkWetransfer" Nullable="true" />
+          <Property Type="Int32" Name="IdSustento" Nullable="false" />
+          <Property Type="String" Name="NumeroFactura" Nullable="true" />
+          <Property Type="String" Name="NombreArchivoFactura" Nullable="true" />
+          <Property Type="String" Name="PdfFactura" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_postSustentoAprobado_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_postSustentoRechazado_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_postSustentoFacturacion_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getActasOtraMarca_sel_Result">
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="38" Scale="3" />
+          <Property Type="String" Name="MesEntrega" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="IdCrucePxQCabeceraMarca" Nullable="false" />
+          <Property Type="Int32" Name="IdCrucePxQCabecera" Nullable="false" />
+          <Property Type="Int16" Name="MarcaId" Nullable="false" />
+          <Property Type="String" Name="periodo" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IdEstadoEtapa" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_postSustentoFinalizarCampana_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getSustentoOm_sel_Result">
+          <Property Type="Int32" Name="IdSustento" Nullable="false" />
+          <Property Type="String" Name="userIdCreador" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalSus" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="String" Name="NombreArchivo" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+          <Property Type="String" Name="PdfSustento" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Observacion" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LinkWetransfer" Nullable="true" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getSustentoOmByActas_sel_Result">
+          <Property Type="Int32" Name="IdSustento" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdCrucePxQCabeceraMarca" Nullable="false" />
+          <Property Type="String" Name="NombreArchivo" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalSus" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="String" Name="PdfSustento" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LinkWetransfer" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getMarcas_Result">
+          <Property Type="Int16" Name="id" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_getFactura_sel_Result">
+          <Property Type="String" Name="NombreEquipo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Comprador" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Categoria" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Anio" Nullable="false" />
+          <Property Type="Int32" Name="Q" Nullable="false" />
+          <Property Type="String" Name="Moneda" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EstadoEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FechaRecepcion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="AnioEntrega" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MesEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorTotal" Nullable="false" />
+          <Property Type="Int32" Name="VirUnitario" Nullable="false" />
+          <Property Type="Decimal" Name="VirTotal" Nullable="false" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="Fc" Nullable="false" Precision="5" Scale="4" />
+          <Property Type="Decimal" Name="FcUnitario" Nullable="false" Precision="5" Scale="3" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="TipoIncoterm" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Incoterm" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="IncotermTotal" Nullable="true" Precision="8" Scale="3" />
+          <Property Type="Int32" Name="UsdTotal" Nullable="false" />
+          <Property Type="Decimal" Name="ValorNetoUnitario" Nullable="true" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorNetoTotal" Nullable="false" />
+          <Property Type="String" Name="FactFc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoFactFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFactFc" Nullable="true" MaxLength="20" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="Int32" Name="IdFactura" Nullable="false" />
+          <Property Type="Int32" Name="IdSustento" Nullable="false" />
+          <Property Type="Int32" Name="IdCrucePxQCabeceraMarca" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="NcFc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="Int16" Name="idEstadoEtapaSus" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getDebtsPaid_sel_Result">
+          <Property Type="String" Name="NombreEquipo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QCodigo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Comprador" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Categoria" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Anio" Nullable="false" />
+          <Property Type="Int32" Name="Q" Nullable="false" />
+          <Property Type="String" Name="Moneda" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EstadoEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FechaRecepcion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="AnioEntrega" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MesEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorTotal" Nullable="false" />
+          <Property Type="Int32" Name="VirUnitario" Nullable="false" />
+          <Property Type="Decimal" Name="VirTotal" Nullable="false" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="Fc" Nullable="false" Precision="5" Scale="4" />
+          <Property Type="Decimal" Name="FcUnitario" Nullable="false" Precision="5" Scale="3" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="TipoIncoterm" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Incoterm" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="IncotermTotal" Nullable="true" Precision="8" Scale="3" />
+          <Property Type="Int32" Name="UsdTotal" Nullable="false" />
+          <Property Type="Decimal" Name="ValorNetoUnitario" Nullable="true" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorNetoTotal" Nullable="false" />
+          <Property Type="String" Name="EstadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="FactFc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoFactFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFactFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="Int32" Name="IdCrucePxQDetalle" Nullable="false" />
+          <Property Type="String" Name="NcVir" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="NcFc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="NcIncoterm" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_getSustentoDeudasPxQ_Result">
+          <Property Type="Int32" Name="IdSustento" Nullable="false" />
+          <Property Type="Int32" Name="IdCrucePxQDetalle" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="VirTotal" Nullable="false" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="IncotermTotal" Nullable="true" Precision="8" Scale="3" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="Int32" Name="IdCrucePxQCabeceraMarca" Nullable="false" />
+          <Property Type="String" Name="EstadoEntrega" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_postDeudaPagadaAcreditada_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getFacturaSustento_sel_Result">
+          <Property Type="Int32" Name="IdFactura" Nullable="false" />
+          <Property Type="Int32" Name="IdSustento" Nullable="false" />
+          <Property Type="String" Name="PdfFactura" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="NumeroFactura" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getNotaCredito_Marca_sel_Result">
+          <Property Type="Int32" Name="IdNotaCreditoCabecera" Nullable="false" />
+          <Property Type="Int16" Name="idMarca" Nullable="true" />
+          <Property Type="String" Name="Marca" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="NumeroNc" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Vir" Nullable="false" />
+          <Property Type="Int32" Name="Fc" Nullable="false" />
+          <Property Type="Int32" Name="Incoterm" Nullable="false" />
+          <Property Type="Decimal" Name="MontoNc" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="Total" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="String" Name="FechaCreacion" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="PdfNc" Nullable="true" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_validarLogin_Result">
+          <Property Type="Int32" Name="FlgOk" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id" Nullable="true" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="empresa" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nombreUsuario" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdUsuario" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_deudasCruce_sel_Result">
+          <Property Type="Int32" Name="IdCrucePxQCabecera" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Comprador" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Categoria" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CodigoOracleSku" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Anio" Nullable="false" />
+          <Property Type="Int32" Name="Q" Nullable="false" />
+          <Property Type="String" Name="QCodigo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="NombreEquipo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Moneda" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EstadoEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FechaRecepcion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="AnioEntrega" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="100" />
+          <Property Type="Int16" Name="idMarca" Nullable="false" />
+          <Property Type="String" Name="MesEntrega" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="QAnio" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorTotal" Nullable="false" />
+          <Property Type="Decimal" Name="Incoterm" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="TipoIncoterm" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="IncotermTotal" Nullable="true" Precision="8" Scale="3" />
+          <Property Type="Int32" Name="VirUnitario" Nullable="false" />
+          <Property Type="Decimal" Name="VirTotal" Nullable="false" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="Fc" Nullable="false" Precision="5" Scale="4" />
+          <Property Type="Decimal" Name="FcUnitario" Nullable="false" Precision="5" Scale="3" />
+          <Property Type="Decimal" Name="FcTotal" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="ValorNetoUnitario" Nullable="true" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="ValorNetoTotal" Nullable="false" />
+          <Property Type="String" Name="NcVir" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoVir" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="NcFc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoFc" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="NcIncoterm" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="EstadoAcreditadoIncoterm" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="UsdTotal" Nullable="false" />
+          <Property Type="Int16" Name="IdEstadoEtapa" Nullable="false" />
+          <Property Type="String" Name="IdNotaCreditoCabecera" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="sp_deleteNotaCredito_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_postDeudaValidada_Result">
+          <Property Type="Int32" Name="flag" Nullable="true" />
+          <Property Type="String" Name="output" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="sp_getDeudaValidada_Marca_sel_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="idMarca" Nullable="false" />
+          <Property Type="String" Name="nombreMarca" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="totalTrimestre" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="String" Name="mesesAsignados" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="fechaCreacion" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="IdEstadoEtapa" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AportesTerminalesModelStoreContainer" CdmEntityContainer="AportesTerminalesEntities" >
+          <FunctionImportMapping FunctionImportName="sp_deleteAcuerdoCompraCabecera" FunctionName="AportesTerminalesModel.Store.sp_deleteAcuerdoCompraCabecera">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_deleteAcuerdoCompraCabecera_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getBaseRecepcionesCabecera" FunctionName="AportesTerminalesModel.Store.sp_getBaseRecepcionesCabecera">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getBaseRecepcionesCabecera_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fechaCarga" ColumnName="fechaCarga" />
+                <ScalarProperty Name="nombreArchivo" ColumnName="nombreArchivo" />
+                <ScalarProperty Name="rutaArchivo" ColumnName="rutaArchivo" />
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_crucepxqcabecera_sel" FunctionName="AportesTerminalesModel.Store.sp_crucepxqcabecera_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_crucepxqcabecera_sel_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="compraId" ColumnName="compraId" />
+                <ScalarProperty Name="compraNombreArchivo" ColumnName="compraNombreArchivo" />
+                <ScalarProperty Name="compraFechaCarga" ColumnName="compraFechaCarga" />
+                <ScalarProperty Name="compraRutaArchivo" ColumnName="compraRutaArchivo" />
+                <ScalarProperty Name="compraPeriodo" ColumnName="compraPeriodo" />
+                <ScalarProperty Name="baseId" ColumnName="baseId" />
+                <ScalarProperty Name="baseNombreArchivo" ColumnName="baseNombreArchivo" />
+                <ScalarProperty Name="baseFechaCarga" ColumnName="baseFechaCarga" />
+                <ScalarProperty Name="baseRutaArchivo" ColumnName="baseRutaArchivo" />
+                <ScalarProperty Name="basePeriodo" ColumnName="basePeriodo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postCruceMarca" FunctionName="AportesTerminalesModel.Store.sp_postCruceMarca">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postCruceMarca_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_deleteCruceLineaDuplicada" FunctionName="AportesTerminalesModel.Store.sp_deleteCruceLineaDuplicada">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_deleteCruceLineaDuplicada_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getCruceLineasRepetidas" FunctionName="AportesTerminalesModel.Store.sp_getCruceLineasRepetidas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getCruceLineasRepetidas_Result">
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postBaseRecepcion" FunctionName="AportesTerminalesModel.Store.sp_postBaseRecepcion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postBaseRecepcion_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getAcuerdoCompraCabecera" FunctionName="AportesTerminalesModel.Store.sp_getAcuerdoCompraCabecera">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getAcuerdoCompraCabecera_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fechaCarga" ColumnName="fechaCarga" />
+                <ScalarProperty Name="nombreArchivo" ColumnName="nombreArchivo" />
+                <ScalarProperty Name="rutaArchivo" ColumnName="rutaArchivo" />
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postAcuerdoCompra" FunctionName="AportesTerminalesModel.Store.sp_postAcuerdoCompra">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postAcuerdoCompra_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postCrucePxQDetalle" FunctionName="AportesTerminalesModel.Store.sp_postCrucePxQDetalle">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postCrucePxQDetalle_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_deleteBaseRecepcionCabecera" FunctionName="AportesTerminalesModel.Store.sp_deleteBaseRecepcionCabecera">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_deleteBaseRecepcionCabecera_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_baserecepcion_rel_acuerdocompra_sel" FunctionName="AportesTerminalesModel.Store.sp_baserecepcion_rel_acuerdocompra_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_baserecepcion_rel_acuerdocompra_sel_Result">
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="QCodigo" ColumnName="QCodigo" />
+                <ScalarProperty Name="Comprador" ColumnName="Comprador" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="CodigoOracleSku" ColumnName="CodigoOracleSku" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Q" ColumnName="Q" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="EstadoEntrega" ColumnName="EstadoEntrega" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="AnioEntrega" ColumnName="AnioEntrega" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="MesEntrega" ColumnName="MesEntrega" />
+                <ScalarProperty Name="QAnio" ColumnName="QAnio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+                <ScalarProperty Name="VirUnitario" ColumnName="VirUnitario" />
+                <ScalarProperty Name="VirTotal" ColumnName="VirTotal" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="FcUnitario" ColumnName="FcUnitario" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="TipoIncoterm" ColumnName="TipoIncoterm" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="IncotermTotal" ColumnName="IncotermTotal" />
+                <ScalarProperty Name="UsdTotal" ColumnName="UsdTotal" />
+                <ScalarProperty Name="ValorNetoUnitario" ColumnName="ValorNetoUnitario" />
+                <ScalarProperty Name="ValorNetoTotal" ColumnName="ValorNetoTotal" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="NcVir" ColumnName="NcVir" />
+                <ScalarProperty Name="EstadoVir" ColumnName="EstadoVir" />
+                <ScalarProperty Name="EstadoAcreditadoVir" ColumnName="EstadoAcreditadoVir" />
+                <ScalarProperty Name="NcFc" ColumnName="NcFc" />
+                <ScalarProperty Name="EstadoFc" ColumnName="EstadoFc" />
+                <ScalarProperty Name="EstadoAcreditadoFc" ColumnName="EstadoAcreditadoFc" />
+                <ScalarProperty Name="NcIncoterm" ColumnName="NcIncoterm" />
+                <ScalarProperty Name="EstadoIncoterm" ColumnName="EstadoIncoterm" />
+                <ScalarProperty Name="EstadoAcreditadoIncoterm" ColumnName="EstadoAcreditadoIncoterm" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="IdNotaCreditoCabecera" ColumnName="IdNotaCreditoCabecera" />
+                <ScalarProperty Name="IdCrucePxQCabecera" ColumnName="IdCrucePxQCabecera" />
+                <ScalarProperty Name="idMarca" ColumnName="idMarca" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postNotaCredito" FunctionName="AportesTerminalesModel.Store.sp_postNotaCredito">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postNotaCredito_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getNotaCredito_sel" FunctionName="AportesTerminalesModel.Store.sp_getNotaCredito_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getNotaCredito_sel_Result">
+                <ScalarProperty Name="NumeroNc" ColumnName="NumeroNc" />
+                <ScalarProperty Name="MontoNc" ColumnName="MontoNc" />
+                <ScalarProperty Name="PdfNc" ColumnName="PdfNc" />
+                <ScalarProperty Name="IdNotaCreditoCabecera" ColumnName="IdNotaCreditoCabecera" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Vir" ColumnName="Vir" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="idMarca" ColumnName="idMarca" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postNotaCreditoPagada" FunctionName="AportesTerminalesModel.Store.sp_postNotaCreditoPagada">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postNotaCreditoPagada_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getNotaCreditoByCruce_sel" FunctionName="AportesTerminalesModel.Store.sp_getNotaCreditoByCruce_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getNotaCreditoByCruce_sel_Result">
+                <ScalarProperty Name="IdNotaCreditoCabecera" ColumnName="IdNotaCreditoCabecera" />
+                <ScalarProperty Name="NumeroNc" ColumnName="NumeroNc" />
+                <ScalarProperty Name="idCrucePxQDetalle" ColumnName="idCrucePxQDetalle" />
+                <ScalarProperty Name="Vir" ColumnName="Vir" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="MontoNc" ColumnName="MontoNc" />
+                <ScalarProperty Name="PdfNc" ColumnName="PdfNc" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="XmlNc" ColumnName="XmlNc" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_PostNotaCreditoAceptada" FunctionName="AportesTerminalesModel.Store.sp_PostNotaCreditoAceptada">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_PostNotaCreditoAceptada_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postNotaCreditoContabilidad" FunctionName="AportesTerminalesModel.Store.sp_postNotaCreditoContabilidad">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postNotaCreditoContabilidad_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_deleteRegistrosPendientes" FunctionName="AportesTerminalesModel.Store.sp_deleteRegistrosPendientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_deleteRegistrosPendientes_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getLineasNotaCredito" FunctionName="AportesTerminalesModel.Store.sp_getLineasNotaCredito">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getLineasNotaCredito_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="CodigoOracleSku" ColumnName="CodigoOracleSku" />
+                <ScalarProperty Name="MesEntrega" ColumnName="MesEntrega" />
+                <ScalarProperty Name="QAnio" ColumnName="QAnio" />
+                <ScalarProperty Name="EstadoEntrega" ColumnName="EstadoEntrega" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IdNotaCreditoCabecera" ColumnName="IdNotaCreditoCabecera" />
+                <ScalarProperty Name="Vir" ColumnName="Vir" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postNotaCreditoNotificacion" FunctionName="AportesTerminalesModel.Store.sp_postNotaCreditoNotificacion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postNotaCreditoNotificacion_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postNotaCreditoRechazada" FunctionName="AportesTerminalesModel.Store.sp_postNotaCreditoRechazada">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postNotaCreditoRechazada_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getLineaNotaCreditoContabilidad" FunctionName="AportesTerminalesModel.Store.sp_getLineaNotaCreditoContabilidad">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getLineaNotaCreditoContabilidad_Result">
+                <ScalarProperty Name="VirUnitario" ColumnName="VirUnitario" />
+                <ScalarProperty Name="VirTotal" ColumnName="VirTotal" />
+                <ScalarProperty Name="IncotermTotal" ColumnName="IncotermTotal" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="NumeroNc" ColumnName="NumeroNc" />
+                <ScalarProperty Name="FcUnitario" ColumnName="FcUnitario" />
+                <ScalarProperty Name="FcCuentaContable" ColumnName="FcCuentaContable" />
+                <ScalarProperty Name="Vir" ColumnName="Vir" />
+                <ScalarProperty Name="VirCuentaContable" ColumnName="VirCuentaContable" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="IncotermUnitario" ColumnName="IncotermUnitario" />
+                <ScalarProperty Name="IncotermCuentaContable" ColumnName="IncotermCuentaContable" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Distribucion" ColumnName="Distribucion" />
+                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+                <ScalarProperty Name="FcDistribuido" ColumnName="FcDistribuido" />
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IdNotaCreditoCrucePxQDetalle" ColumnName="IdNotaCreditoCrucePxQDetalle" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Q" ColumnName="Q" />
+                <ScalarProperty Name="QAnio" ColumnName="QAnio" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="CodigoOracleSku" ColumnName="CodigoOracleSku" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getLineasNotaCreditoCompras_sel" FunctionName="AportesTerminalesModel.Store.sp_getLineasNotaCreditoCompras_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getLineasNotaCreditoCompras_sel_Result">
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="QCodigo" ColumnName="QCodigo" />
+                <ScalarProperty Name="Comprador" ColumnName="Comprador" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="CodigoOracleSku" ColumnName="CodigoOracleSku" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Q" ColumnName="Q" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="EstadoEntrega" ColumnName="EstadoEntrega" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="AnioEntrega" ColumnName="AnioEntrega" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="MesEntrega" ColumnName="MesEntrega" />
+                <ScalarProperty Name="QAnio" ColumnName="QAnio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+                <ScalarProperty Name="VirUnitario" ColumnName="VirUnitario" />
+                <ScalarProperty Name="VirTotal" ColumnName="VirTotal" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="FcUnitario" ColumnName="FcUnitario" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="TipoIncoterm" ColumnName="TipoIncoterm" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="IncotermTotal" ColumnName="IncotermTotal" />
+                <ScalarProperty Name="UsdTotal" ColumnName="UsdTotal" />
+                <ScalarProperty Name="ValorNetoUnitario" ColumnName="ValorNetoUnitario" />
+                <ScalarProperty Name="ValorNetoTotal" ColumnName="ValorNetoTotal" />
+                <ScalarProperty Name="NcVir" ColumnName="NcVir" />
+                <ScalarProperty Name="EstadoVir" ColumnName="EstadoVir" />
+                <ScalarProperty Name="EstadoAcreditadoVir" ColumnName="EstadoAcreditadoVir" />
+                <ScalarProperty Name="NcFc" ColumnName="NcFc" />
+                <ScalarProperty Name="EstadoFc" ColumnName="EstadoFc" />
+                <ScalarProperty Name="EstadoAcreditadoFc" ColumnName="EstadoAcreditadoFc" />
+                <ScalarProperty Name="NcIncoterm" ColumnName="NcIncoterm" />
+                <ScalarProperty Name="EstadoIncoterm" ColumnName="EstadoIncoterm" />
+                <ScalarProperty Name="EstadoAcreditadoIncoterm" ColumnName="EstadoAcreditadoIncoterm" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="FactFc" ColumnName="FactFc" />
+                <ScalarProperty Name="EstadoFactFc" ColumnName="EstadoFactFc" />
+                <ScalarProperty Name="EstadoAcreditadoFactFc" ColumnName="EstadoAcreditadoFactFc" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getLineasNotaCreditoHistorial_sel" FunctionName="AportesTerminalesModel.Store.sp_getLineasNotaCreditoHistorial_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getLineasNotaCreditoHistorial_sel_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="CodigoOracleSku" ColumnName="CodigoOracleSku" />
+                <ScalarProperty Name="MesEntrega" ColumnName="MesEntrega" />
+                <ScalarProperty Name="QAnio" ColumnName="QAnio" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="NcVir" ColumnName="NcVir" />
+                <ScalarProperty Name="VirUnitario" ColumnName="VirUnitario" />
+                <ScalarProperty Name="VirTotal" ColumnName="VirTotal" />
+                <ScalarProperty Name="NcFc" ColumnName="NcFc" />
+                <ScalarProperty Name="FcUnitario" ColumnName="FcUnitario" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="NcIncoterm" ColumnName="NcIncoterm" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="IncotermTotal" ColumnName="IncotermTotal" />
+                <ScalarProperty Name="EstadoAcreditadoVir" ColumnName="EstadoAcreditadoVir" />
+                <ScalarProperty Name="EstadoAcreditadoFc" ColumnName="EstadoAcreditadoFc" />
+                <ScalarProperty Name="EstadoAcreditadoIncoterm" ColumnName="EstadoAcreditadoIncoterm" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="FactFc" ColumnName="FactFc" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_PostSustento" FunctionName="AportesTerminalesModel.Store.sp_PostSustento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_PostSustento_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getActasSamsung_sel" FunctionName="AportesTerminalesModel.Store.sp_getActasSamsung_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getActasSamsung_sel_Result">
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="IdCrucePxQCabecera" ColumnName="IdCrucePxQCabecera" />
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+                <ScalarProperty Name="MesEntrega" ColumnName="MesEntrega" />
+                <ScalarProperty Name="MarcaId" ColumnName="MarcaId" />
+                <ScalarProperty Name="IdCrucePxQCabeceraMarca" ColumnName="IdCrucePxQCabeceraMarca" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getSustento_sel" FunctionName="AportesTerminalesModel.Store.sp_getSustento_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getSustento_sel_Result">
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="TotalSus" ColumnName="TotalSus" />
+                <ScalarProperty Name="PdfSustento" ColumnName="PdfSustento" />
+                <ScalarProperty Name="LinkWetransfer" ColumnName="LinkWetransfer" />
+                <ScalarProperty Name="IdSustento" ColumnName="IdSustento" />
+                <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+                <ScalarProperty Name="NombreArchivoFactura" ColumnName="NombreArchivoFactura" />
+                <ScalarProperty Name="PdfFactura" ColumnName="PdfFactura" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postSustentoAprobado" FunctionName="AportesTerminalesModel.Store.sp_postSustentoAprobado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postSustentoAprobado_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postSustentoRechazado" FunctionName="AportesTerminalesModel.Store.sp_postSustentoRechazado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postSustentoRechazado_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postSustentoFacturacion" FunctionName="AportesTerminalesModel.Store.sp_postSustentoFacturacion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postSustentoFacturacion_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postSustentoFinalizarCampana" FunctionName="AportesTerminalesModel.Store.sp_postSustentoFinalizarCampana">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postSustentoFinalizarCampana_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getSustentoOm_sel" FunctionName="AportesTerminalesModel.Store.sp_getSustentoOm_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getSustentoOm_sel_Result">
+                <ScalarProperty Name="IdSustento" ColumnName="IdSustento" />
+                <ScalarProperty Name="userIdCreador" ColumnName="userIdCreador" />
+                <ScalarProperty Name="TotalSus" ColumnName="TotalSus" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="PdfSustento" ColumnName="PdfSustento" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="LinkWetransfer" ColumnName="LinkWetransfer" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getSustentoOmByActas_sel" FunctionName="AportesTerminalesModel.Store.sp_getSustentoOmByActas_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getSustentoOmByActas_sel_Result">
+                <ScalarProperty Name="IdSustento" ColumnName="IdSustento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="IdCrucePxQCabeceraMarca" ColumnName="IdCrucePxQCabeceraMarca" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="TotalSus" ColumnName="TotalSus" />
+                <ScalarProperty Name="PdfSustento" ColumnName="PdfSustento" />
+                <ScalarProperty Name="LinkWetransfer" ColumnName="LinkWetransfer" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getPermisosUsuarios_sel" FunctionName="AportesTerminalesModel.Store.sp_getPermisosUsuarios_sel" />
+          <FunctionImportMapping FunctionImportName="sp_getMarcas" FunctionName="AportesTerminalesModel.Store.sp_getMarcas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getMarcas_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getFactura_sel" FunctionName="AportesTerminalesModel.Store.sp_getFactura_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getFactura_sel_Result">
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="Comprador" ColumnName="Comprador" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="CodigoOracleSku" ColumnName="CodigoOracleSku" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Q" ColumnName="Q" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="EstadoEntrega" ColumnName="EstadoEntrega" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="AnioEntrega" ColumnName="AnioEntrega" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="MesEntrega" ColumnName="MesEntrega" />
+                <ScalarProperty Name="QAnio" ColumnName="QAnio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+                <ScalarProperty Name="VirUnitario" ColumnName="VirUnitario" />
+                <ScalarProperty Name="VirTotal" ColumnName="VirTotal" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="FcUnitario" ColumnName="FcUnitario" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="TipoIncoterm" ColumnName="TipoIncoterm" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="IncotermTotal" ColumnName="IncotermTotal" />
+                <ScalarProperty Name="UsdTotal" ColumnName="UsdTotal" />
+                <ScalarProperty Name="ValorNetoUnitario" ColumnName="ValorNetoUnitario" />
+                <ScalarProperty Name="ValorNetoTotal" ColumnName="ValorNetoTotal" />
+                <ScalarProperty Name="FactFc" ColumnName="FactFc" />
+                <ScalarProperty Name="EstadoFactFc" ColumnName="EstadoFactFc" />
+                <ScalarProperty Name="EstadoAcreditadoFactFc" ColumnName="EstadoAcreditadoFactFc" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+                <ScalarProperty Name="IdSustento" ColumnName="IdSustento" />
+                <ScalarProperty Name="IdCrucePxQCabeceraMarca" ColumnName="IdCrucePxQCabeceraMarca" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="NcFc" ColumnName="NcFc" />
+                <ScalarProperty Name="EstadoFc" ColumnName="EstadoFc" />
+                <ScalarProperty Name="EstadoAcreditadoFc" ColumnName="EstadoAcreditadoFc" />
+                <ScalarProperty Name="idEstadoEtapaSus" ColumnName="idEstadoEtapaSus" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDebtsPaid_sel" FunctionName="AportesTerminalesModel.Store.sp_getDebtsPaid_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getDebtsPaid_sel_Result">
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="QCodigo" ColumnName="QCodigo" />
+                <ScalarProperty Name="Comprador" ColumnName="Comprador" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="CodigoOracleSku" ColumnName="CodigoOracleSku" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Q" ColumnName="Q" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="EstadoEntrega" ColumnName="EstadoEntrega" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="AnioEntrega" ColumnName="AnioEntrega" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="MesEntrega" ColumnName="MesEntrega" />
+                <ScalarProperty Name="QAnio" ColumnName="QAnio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+                <ScalarProperty Name="VirUnitario" ColumnName="VirUnitario" />
+                <ScalarProperty Name="VirTotal" ColumnName="VirTotal" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="FcUnitario" ColumnName="FcUnitario" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="TipoIncoterm" ColumnName="TipoIncoterm" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="IncotermTotal" ColumnName="IncotermTotal" />
+                <ScalarProperty Name="UsdTotal" ColumnName="UsdTotal" />
+                <ScalarProperty Name="ValorNetoUnitario" ColumnName="ValorNetoUnitario" />
+                <ScalarProperty Name="ValorNetoTotal" ColumnName="ValorNetoTotal" />
+                <ScalarProperty Name="EstadoVir" ColumnName="EstadoVir" />
+                <ScalarProperty Name="EstadoAcreditadoVir" ColumnName="EstadoAcreditadoVir" />
+                <ScalarProperty Name="EstadoFc" ColumnName="EstadoFc" />
+                <ScalarProperty Name="EstadoAcreditadoFc" ColumnName="EstadoAcreditadoFc" />
+                <ScalarProperty Name="FactFc" ColumnName="FactFc" />
+                <ScalarProperty Name="EstadoFactFc" ColumnName="EstadoFactFc" />
+                <ScalarProperty Name="EstadoAcreditadoFactFc" ColumnName="EstadoAcreditadoFactFc" />
+                <ScalarProperty Name="EstadoIncoterm" ColumnName="EstadoIncoterm" />
+                <ScalarProperty Name="EstadoAcreditadoIncoterm" ColumnName="EstadoAcreditadoIncoterm" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="IdCrucePxQDetalle" ColumnName="IdCrucePxQDetalle" />
+                <ScalarProperty Name="NcVir" ColumnName="NcVir" />
+                <ScalarProperty Name="NcFc" ColumnName="NcFc" />
+                <ScalarProperty Name="NcIncoterm" ColumnName="NcIncoterm" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getSustentoDeudasPxQ" FunctionName="AportesTerminalesModel.Store.sp_getSustentoDeudasPxQ">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getSustentoDeudasPxQ_Result">
+                <ScalarProperty Name="IdSustento" ColumnName="IdSustento" />
+                <ScalarProperty Name="IdCrucePxQDetalle" ColumnName="IdCrucePxQDetalle" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="VirTotal" ColumnName="VirTotal" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="IncotermTotal" ColumnName="IncotermTotal" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="IdCrucePxQCabeceraMarca" ColumnName="IdCrucePxQCabeceraMarca" />
+                <ScalarProperty Name="EstadoEntrega" ColumnName="EstadoEntrega" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postDeudaPagadaAcreditada" FunctionName="AportesTerminalesModel.Store.sp_postDeudaPagadaAcreditada">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postDeudaPagadaAcreditada_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_token" FunctionName="AportesTerminalesModel.Store.sp_token" />
+          <FunctionImportMapping FunctionImportName="sp_getFacturaSustento_sel" FunctionName="AportesTerminalesModel.Store.sp_getFacturaSustento_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getFacturaSustento_sel_Result">
+                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+                <ScalarProperty Name="IdSustento" ColumnName="IdSustento" />
+                <ScalarProperty Name="PdfFactura" ColumnName="PdfFactura" />
+                <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getNotaCredito_Marca_sel" FunctionName="AportesTerminalesModel.Store.sp_getNotaCredito_Marca_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getNotaCredito_Marca_sel_Result">
+                <ScalarProperty Name="IdNotaCreditoCabecera" ColumnName="IdNotaCreditoCabecera" />
+                <ScalarProperty Name="idMarca" ColumnName="idMarca" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="NumeroNc" ColumnName="NumeroNc" />
+                <ScalarProperty Name="Vir" ColumnName="Vir" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="MontoNc" ColumnName="MontoNc" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="PdfNc" ColumnName="PdfNc" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_validarLogin" FunctionName="AportesTerminalesModel.Store.sp_validarLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_validarLogin_Result">
+                <ScalarProperty Name="FlgOk" ColumnName="FlgOk" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="empresa" ColumnName="empresa" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_deudasCruce_sel" FunctionName="AportesTerminalesModel.Store.sp_deudasCruce_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_deudasCruce_sel_Result">
+                <ScalarProperty Name="IdCrucePxQCabecera" ColumnName="IdCrucePxQCabecera" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Comprador" ColumnName="Comprador" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="CodigoOracleSku" ColumnName="CodigoOracleSku" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Q" ColumnName="Q" />
+                <ScalarProperty Name="QCodigo" ColumnName="QCodigo" />
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="EstadoEntrega" ColumnName="EstadoEntrega" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="AnioEntrega" ColumnName="AnioEntrega" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="idMarca" ColumnName="idMarca" />
+                <ScalarProperty Name="MesEntrega" ColumnName="MesEntrega" />
+                <ScalarProperty Name="QAnio" ColumnName="QAnio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+                <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+                <ScalarProperty Name="TipoIncoterm" ColumnName="TipoIncoterm" />
+                <ScalarProperty Name="IncotermTotal" ColumnName="IncotermTotal" />
+                <ScalarProperty Name="VirUnitario" ColumnName="VirUnitario" />
+                <ScalarProperty Name="VirTotal" ColumnName="VirTotal" />
+                <ScalarProperty Name="Fc" ColumnName="Fc" />
+                <ScalarProperty Name="FcUnitario" ColumnName="FcUnitario" />
+                <ScalarProperty Name="FcTotal" ColumnName="FcTotal" />
+                <ScalarProperty Name="ValorNetoUnitario" ColumnName="ValorNetoUnitario" />
+                <ScalarProperty Name="ValorNetoTotal" ColumnName="ValorNetoTotal" />
+                <ScalarProperty Name="NcVir" ColumnName="NcVir" />
+                <ScalarProperty Name="EstadoVir" ColumnName="EstadoVir" />
+                <ScalarProperty Name="EstadoAcreditadoVir" ColumnName="EstadoAcreditadoVir" />
+                <ScalarProperty Name="NcFc" ColumnName="NcFc" />
+                <ScalarProperty Name="EstadoFc" ColumnName="EstadoFc" />
+                <ScalarProperty Name="EstadoAcreditadoFc" ColumnName="EstadoAcreditadoFc" />
+                <ScalarProperty Name="NcIncoterm" ColumnName="NcIncoterm" />
+                <ScalarProperty Name="EstadoIncoterm" ColumnName="EstadoIncoterm" />
+                <ScalarProperty Name="EstadoAcreditadoIncoterm" ColumnName="EstadoAcreditadoIncoterm" />
+                <ScalarProperty Name="UsdTotal" ColumnName="UsdTotal" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+                <ScalarProperty Name="IdNotaCreditoCabecera" ColumnName="IdNotaCreditoCabecera" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_deleteNotaCredito" FunctionName="AportesTerminalesModel.Store.sp_deleteNotaCredito">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_deleteNotaCredito_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_postDeudaValidada" FunctionName="AportesTerminalesModel.Store.sp_postDeudaValidada">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_postDeudaValidada_Result">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="output" ColumnName="output" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDeudaValidada_Marca_sel" FunctionName="AportesTerminalesModel.Store.sp_getDeudaValidada_Marca_sel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AportesTerminalesModel.sp_getDeudaValidada_Marca_sel_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idMarca" ColumnName="idMarca" />
+                <ScalarProperty Name="nombreMarca" ColumnName="nombreMarca" />
+                <ScalarProperty Name="totalTrimestre" ColumnName="totalTrimestre" />
+                <ScalarProperty Name="mesesAsignados" ColumnName="mesesAsignados" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="IdEstadoEtapa" ColumnName="IdEstadoEtapa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
